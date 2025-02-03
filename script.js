@@ -22,6 +22,12 @@ function isValidUrl(url) {
            (url.endsWith('.mp4') || url.endsWith('.webm') || url.endsWith('.ogg') || url.endsWith('.mkv'));
 }
 
+// Function to check if MKV is supported
+function isMkvSupported() {
+    const videoElement = document.createElement('video');
+    return videoElement.canPlayType('video/x-matroska') !== '';  // Check if browser can play MKV files
+}
+
 // Reset video and play new URL
 function resetVideoPlayer() {
     videoPlayer.pause();
@@ -40,6 +46,12 @@ loadVideoButton.addEventListener('click', () => {
     // Validate the URL before attempting to load it
     if (!isValidUrl(videoUrl)) {
         updateStatus("Invalid URL or unsupported video format. Supported formats: .mp4, .webm, .ogg, .mkv.", true);
+        return;
+    }
+
+    // If the video is MKV, check if it's supported
+    if (videoUrl.endsWith('.mkv') && !isMkvSupported()) {
+        updateStatus("Loading video failed! Unsupported MKV format.", true);
         return;
     }
 
