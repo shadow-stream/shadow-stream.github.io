@@ -123,3 +123,59 @@ input[type="range"] {
         font-size: 14px;
     }
 }
+
+.header1{
+    font-family: Arial, sans-serif;
+    text-align: center;
+
+}
+
+.textinf{
+    font-family: Arial, sans-serif;
+    text-decoration: center;
+
+}
+.linktext{
+    text-decoration: underline;
+    color: blue;
+}
+
+.alerttxt1{
+    color: #57e994;
+}
+.abox1{
+      background-color: #2a774a;
+      border-radius: 5px;
+      padding: 2px 5px;
+}
+
+.bottext{
+    margin-top: 0px;
+}
+.txt{
+    text-align: center;
+}
+.alerttxt{
+    color: red;
+}
+.abox{
+      background-color: #930c0c;
+      border-radius: 5px;
+      padding: 2px 5px;
+}
+
+.navb{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    height: 30px;
+    align-items: center;
+}
+.hlink{
+text-decoration: none;
+color: gray;
+}
+.hlink:hover{
+    text-decoration: underline;
+    color: white;
+    }
